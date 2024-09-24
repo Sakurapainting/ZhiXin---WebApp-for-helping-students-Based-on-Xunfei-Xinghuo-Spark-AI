@@ -1,0 +1,3 @@
+<template>
+    im bar
+</template>
