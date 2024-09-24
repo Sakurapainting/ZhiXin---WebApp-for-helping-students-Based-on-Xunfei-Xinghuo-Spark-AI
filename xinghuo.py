@@ -1,58 +1,3 @@
-# coding: utf-8
-
-#评委老师好，我们采用了本地数据库进行问答信息的存储，故需要您进行简单的mysql数据表创建，具体步骤如下，“ ''' ”内内容依次复制进命令行即可。
-
-#step1  windows+R键，输入cmd，打开终端
-
-#step2  登录mysql，输入：
-'''
-
-mysql -u root -p
-
-'''
-###并输入您数据库密码，密码在此脚本后文 @@@ 处也应输入一遍
-#若没下载mysql，移至官网https://www.mysql.com/cn/下载并注册用户
-
-#step3  创建数据库，输入：
-'''
-
-DROP DATABASE IF EXISTS mydatabase;
-
-'''
-        #接着输入：
-'''
-
-CREATE DATABASE xinghuo;
-
-'''
-
-#step4  进入数据库 输入：
-'''
-
-USE xinghuo;
-
-'''
-
-#step5  创建数据表，输入：
-'''
-
-CREATE TABLE aa (  
-    id INT AUTO_INCREMENT PRIMARY KEY,  
-    ask TEXT,
-    answer TEXT
-);
-
-'''
-
-#数据库本地创建成功
-#您或许需要
-'''
-pip install websocket-client
-'''
-#请在运行此python脚本的软件内导入此库  (eg.在pycharm的settings中
-
-
-
 #��Ʒ �ɵ�ȡapi��ǰ�˶Խ� ʵ�ֶԻ�����
 import _thread as thread
 import os
@@ -112,7 +57,7 @@ class Ws_Param(object):
 
     # ����url
     def create_url(self):
-        # ����RFC1123��ʽ��ʱ���
+        # ����RFC1123��ʽ��ʱ���?
         now = datetime.now()
         date = format_date_time(mktime(now.timetuple()))
 
@@ -143,7 +88,7 @@ class Ws_Param(object):
         return url
 
 
-# �յ�websocket����Ĵ���
+# �յ�websocket����Ĵ���?
 def on_error(ws, error):
     print("### error:", error)
 
@@ -165,7 +110,7 @@ def run(ws, *args):
 
 def gen_params(appid, query, domain):
     """
-    ͨ��appid���û������������������
+    ͨ��appid���û������������������?
     """
 
     data = {
@@ -197,7 +142,7 @@ def on_message(ws, message):
     data = json.loads(message)
     code = data['header']['code']
     if code != 0:
-        print(f'�������: {code}, {data}')
+        print(f'�������?: {code}, {data}')
         ws.close()
     else:
         choices = data["payload"]["choices"]
@@ -288,7 +233,7 @@ def shuaxin():
 
 
 if __name__ == "__main__":
-    ###此处ip为与前端连接同一热点后的ip，请根据具体情况进行更改↓
-    app.run(host='192.168.11.212', port=5000)
-    ###此处ip为与前端连接同一热点后的ip，请根据具体情况进行更改↑
+    ###此处ip为与前端连接同一热点后的ip，请根据具体情况进行更改�?
+    app.run(host='192.xxx.xx.xxx', port=5000)
+    ###此处ip为与前端连接同一热点后的ip，请根据具体情况进行更改�?
 
