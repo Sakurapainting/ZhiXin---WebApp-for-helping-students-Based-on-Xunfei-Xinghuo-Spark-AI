@@ -61,7 +61,7 @@ vue v3.4.21
 
 ### 部署
 
-#### 后端部署
+#### 后端部署（xinghuo.py下）
 
 ##### step1  windows+R键，输入cmd，打开终端
 
